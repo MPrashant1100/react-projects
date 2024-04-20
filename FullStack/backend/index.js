@@ -4,10 +4,12 @@ import { PORT, MONGODB_URI } from './config.js';
 
 const app = express();
 
-app.get('/get', (req, res ) => {
+app.get('/', (req, res ) => {
    // console.log(req)
     return res.status(200).send("Welcome to server for backend")
 })
+
+app.post('/book', async ( req, res ) => {})
 
 mongoose.connect(MONGODB_URI)
 .then(() => {
